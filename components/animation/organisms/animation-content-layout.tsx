@@ -2,16 +2,16 @@ import styled from '@emotion/styled';
 import AnimationCover from '../atoms/animation-cover';
 import AnimationContent from '../molecules/animation-content';
 
-const AnimationMainContent = () => {
+const AnimationContentLayout = () => {
   return (
-    <MainContentLayout>
+    <StyledContentLayout>
       <AnimationCover cover="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg" />
       <AnimationContent />
-    </MainContentLayout>
+    </StyledContentLayout>
   );
 };
 
-const MainContentLayout = styled.section`
+const StyledContentLayout = styled.section`
   display: flex;
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -19,4 +19,4 @@ const MainContentLayout = styled.section`
   padding: 30px 0;
 `;
 
-export default AnimationMainContent;
+export default AnimationContentLayout;
