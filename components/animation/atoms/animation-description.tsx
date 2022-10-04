@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationDescriptionProps {
+interface Props {
   description: string;
 }
 
-const AnimationDescription = ({ description }: AnimationDescriptionProps) => {
+const AnimationDescription = ({ description }: Props) => {
   return (
     <>
       {description.split('<br>').map((text, index) => {

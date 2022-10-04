@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationInfoLabelProps {
+interface Props {
   label: string;
 }
 
-const AnimationInfoLabel = ({ label }: AnimationInfoLabelProps) => {
+const AnimationInfoLabel = ({ label }: Props) => {
   return <StyledAnimationInfoLabel>{label}</StyledAnimationInfoLabel>;
 };
 

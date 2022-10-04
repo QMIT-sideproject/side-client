@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
-interface AnimationBannerProps {
+interface Props {
   banner: string;
 }
 
-const AnimationBanner = ({ banner }: AnimationBannerProps) => {
+const AnimationBanner = ({ banner }: Props) => {
   return <StyledAnimationBanner banner={banner} />;
 };
 
-const StyledAnimationBanner = styled.div<AnimationBannerProps>(({ banner }) => ({
+const StyledAnimationBanner = styled.div<Props>(({ banner }) => ({
   width: '100%',
   height: '400px',
   backgroundImage: `url(${banner})`,

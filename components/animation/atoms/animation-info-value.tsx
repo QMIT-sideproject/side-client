@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationInfoValueProps {
+interface Props {
   value: string | number;
 }
 
-const AnimationInfoValue = ({ value }: AnimationInfoValueProps) => {
+const AnimationInfoValue = ({ value }: Props) => {
   return <StyledAnimationInfoValue>{value}</StyledAnimationInfoValue>;
 };
 

@@ -5,11 +5,11 @@ import AnimationInfoValue from '../atoms/animation-info-value';
 import AnimationInfo from '../molecules/animation-info';
 import { AnimationDetailType } from '../templates/detail-query';
 
-interface AnimationInfoLayoutProps {
+interface Props {
   data: AnimationDetailType;
 }
 
-const AnimationInfoLayout = ({ data }: AnimationInfoLayoutProps) => {
+const AnimationInfoLayout = ({ data }: Props) => {
   const startDate = stringToDateFormat(`${data.startDate.year}-${data.startDate.month}-${data?.startDate.day}`);
   const endDate = stringToDateFormat(`${data.endDate.year}-${data.endDate.month}-${data.endDate.day}`);
 
