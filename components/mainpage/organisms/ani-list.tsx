@@ -2,13 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import SkeletonAniListItem from '../molecules/skeleton-ani-list-item';
 
-const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const arr = new Array(15);
 
 const AniList = () => {
   return (
     <AniListBox>
-      {arr.map((key) => (
-        <SkeletonAniListItem key={key} />
+      {arr.map((value, index) => (
+        <SkeletonAniListItem key={index} />
       ))}
     </AniListBox>
   );
