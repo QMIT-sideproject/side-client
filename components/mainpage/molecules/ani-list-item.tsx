@@ -8,11 +8,17 @@ const AniBox = styled.div`
   width: 170px;
 `;
 
-const AniListItem = () => {
+interface AniInfo {
+  name: string;
+  img: string;
+  id: number;
+}
+
+const AniListItem = (info: AniInfo) => {
   return (
-    <AniBox>
-      <AniImg />
-      <AniName />
+    <AniBox onClick={() => console.log(info.id)}>
+      <AniImg img={info.img} />
+      <AniName name={info.name} />
     </AniBox>
   );
 };
