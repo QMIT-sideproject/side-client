@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface AnimationInfoValueProps {
-  value: string;
+  value: string | number;
 }
 
 const AnimationInfoValue = ({ value }: AnimationInfoValueProps) => {
@@ -9,7 +9,7 @@ const AnimationInfoValue = ({ value }: AnimationInfoValueProps) => {
 };
 
 const StyledAnimationInfoValue = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
 `;
 

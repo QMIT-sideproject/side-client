@@ -9,7 +9,7 @@ const AnimationInfoLabel = ({ label }: AnimationInfoLabelProps) => {
 };
 
 const StyledAnimationInfoLabel = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 `;
 

@@ -14,7 +14,7 @@ const AnimationTitle = ({ title }: AnimationTitleProps) => {
 };
 
 const StyledAnimationTitle = styled.h2`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 `;
 
