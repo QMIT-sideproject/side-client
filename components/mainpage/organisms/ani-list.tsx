@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import SkeletonAniListItem from '../molecules/skeleton-ani-list-item';
 
-const arr = new Array(15);
+const arr = new Array(15).fill(0);
 
 const AniList = () => {
   return (

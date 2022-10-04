@@ -11,10 +11,10 @@ const FilterBox = styled.div`
   flex-direction: column;
 `;
 
-const Filter = ({filterInfo}: FilterInfo) => {
+const Filter = ({ name }: FilterInfo) => {
   return (
     <FilterBox>
-      <FilterName name={filterInfo} />
+      <FilterName name={name} />
       <FilterBtn />
     </FilterBox>
   );
