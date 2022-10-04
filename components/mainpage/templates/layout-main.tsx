@@ -36,9 +36,14 @@ interface DataType {
     media: AniType[];
   };
 }
+interface VariablesType {
+  page: number;
+  perPage: number;
+  sort: string;
+}
 
 const MainLayout = () => {
-  const { loading, data } = useQuery<DataType>(GET_TRENDING_ANI_LIST, {
+  const { loading, data } = useQuery<DataType, VariablesType>(GET_TRENDING_ANI_LIST, {
     variables: { page: 1, perPage: 20, sort: 'FAVOURITES_DESC' },
   });
   if (loading) {
