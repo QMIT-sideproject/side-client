@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const AniImg: React.FunctionComponent = () => {
+const AniImg = () => {
   return <AniImgWrap src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21-tXMN3Y20PIL9.jpg" />;
 };
 
