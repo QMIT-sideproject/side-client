@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationCoverProps {
+interface Props {
   cover: string;
 }
 
-const AnimationCover = ({ cover }: AnimationCoverProps) => {
+const AnimationCover = ({ cover }: Props) => {
   return <StyledanimationCover src={cover} />;
 };
 

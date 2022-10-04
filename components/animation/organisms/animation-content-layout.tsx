@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import AnimationCover from '../atoms/animation-cover';
 import AnimationContent from '../molecules/animation-content';
 
-interface AnimationContentLayoutProps {
+interface Props {
   cover: string;
   title: string;
   description: string;
 }
 
-const AnimationContentLayout = ({ cover, title, description }: AnimationContentLayoutProps) => {
+const AnimationContentLayout = ({ cover, title, description }: Props) => {
   return (
     <StyledContentLayout>
       <AnimationCover cover={cover} />

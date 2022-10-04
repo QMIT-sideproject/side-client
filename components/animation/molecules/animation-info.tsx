@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import AnimationInfoLabel from '../atoms/animation-info-label';
 import AnimationInfoValue from '../atoms/animation-info-value';
 
-interface AnimationInfoProps {
+interface Props {
   label: string;
   value: string | number;
 }
 
-const AnimationInfo = ({ label, value }: AnimationInfoProps) => {
+const AnimationInfo = ({ label, value }: Props) => {
   return (
     <InfoLayout>
       <AnimationInfoLabel label={label} />

@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationTitleProps {
+interface Props {
   title: string;
 }
 
-const AnimationTitle = ({ title }: AnimationTitleProps) => {
+const AnimationTitle = ({ title }: Props) => {
   return (
     <>
       <StyledAnimationTitle>{title}</StyledAnimationTitle>
