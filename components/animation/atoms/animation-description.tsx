@@ -20,7 +20,7 @@ const AnimationDescription = ({ description }: AnimationDescriptionProps) => {
 };
 
 const StyledAnimationDescription = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   color: #777;
 `;
 
