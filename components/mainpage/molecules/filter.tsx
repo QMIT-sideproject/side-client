@@ -10,7 +10,6 @@ interface FilterInfo {
 const FilterBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const Filter = (filterInfo: FilterInfo) => {

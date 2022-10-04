@@ -6,7 +6,7 @@ import AniName from '../atoms/ani-name';
 
 const AniBox = styled.div`
   cursor: pointer;
-  width: 185px;
+  width: 170px;
 `;
 
 const AniListItem = () => {
