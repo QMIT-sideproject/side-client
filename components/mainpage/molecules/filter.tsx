@@ -1,4 +1,3 @@
-import React from 'react';
 import FilterName from '../atoms/filter-name';
 import FilterBtn from '../atoms/filter-btn';
 import styled from '@emotion/styled';
@@ -12,10 +11,10 @@ const FilterBox = styled.div`
   flex-direction: column;
 `;
 
-const Filter = (filterInfo: FilterInfo) => {
+const Filter = ({filterInfo}: FilterInfo) => {
   return (
     <FilterBox>
-      <FilterName name={filterInfo.name} />
+      <FilterName name={filterInfo} />
       <FilterBtn />
     </FilterBox>
   );
