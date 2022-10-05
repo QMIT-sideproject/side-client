@@ -1,16 +1,12 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 
 interface Props {
   cover: string;
 }
 
 const RelationItemCover = ({ cover }: Props) => {
-  return <StyledRelationItemCover src={cover} />;
+  return <Image src={cover} alt="커버 이미지" layout="fill" />;
 };
-
-const StyledRelationItemCover = styled.img`
-  width: 100%;
-  height: 100%;
-`;
 
 export default RelationItemCover;

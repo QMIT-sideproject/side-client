@@ -19,6 +19,7 @@ const RelationItem = ({ relations }: Pick<AnimationDetailType, 'relations'>) => 
 const RelationItemWrapper = styled.div`
   position: relative;
   width: 90px;
+  height: 115px;
   max-height: 115px;
   cursor: pointer;
 `;
