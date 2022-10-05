@@ -1,25 +1,15 @@
 import styled from '@emotion/styled';
+import parse from 'html-react-parser';
 
 interface Props {
   description: string;
 }
 
 const AnimationDescription = ({ description }: Props) => {
-  return (
-    <>
-      {description.split('<br>').map((text, index) => {
-        return (
-          <StyledAnimationDescription key={index}>
-            {text}
-            <br />
-          </StyledAnimationDescription>
-        );
-      })}
-    </>
-  );
+  return <StyledAnimationDescription>{parse(description)}</StyledAnimationDescription>;
 };
 
-const StyledAnimationDescription = styled.p`
+const StyledAnimationDescription = styled.div`
   font-size: 18px;
   color: #777;
 `;
