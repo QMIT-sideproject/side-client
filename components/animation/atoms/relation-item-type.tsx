@@ -14,7 +14,7 @@ const StyledRelationItemType = styled.div`
   bottom: 0;
   padding: 10px 0;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
 `;
