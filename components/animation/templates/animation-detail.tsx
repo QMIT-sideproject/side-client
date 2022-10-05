@@ -29,7 +29,7 @@ const AnimationDetail = () => {
 };
 
 const StyledDetailLayout = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 `;
 
