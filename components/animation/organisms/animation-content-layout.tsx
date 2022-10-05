@@ -11,7 +11,9 @@ interface Props {
 const AnimationContentLayout = ({ cover, title, description }: Props) => {
   return (
     <StyledContentLayout>
-      <AnimationCover cover={cover} />
+      <AnimationCoverWrapper>
+        <AnimationCover cover={cover} />
+      </AnimationCoverWrapper>
       <AnimationContent title={title} description={description} />
     </StyledContentLayout>
   );
@@ -19,10 +21,14 @@ const AnimationContentLayout = ({ cover, title, description }: Props) => {
 
 const StyledContentLayout = styled.section`
   display: flex;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 20px;
+  gap: 30px;
   padding: 30px 0;
+`;
+
+const AnimationCoverWrapper = styled.div`
+  position: relative;
+  width: 200px;
+  height: 300px;
 `;
 
 export default AnimationContentLayout;
