@@ -4,6 +4,7 @@ import AnimationContentLayout from '../organisms/animation-content-layout';
 import AnimationInfoLayout from '../organisms/animation-info-layout';
 import AnimationBanner from '../atoms/animation-banner';
 import useAnimationDetail from 'hooks/use-animation-detail';
+import RelationList from '../organisms/relation-list';
 
 const AnimationDetail = () => {
   const router = useRouter();
@@ -21,6 +22,7 @@ const AnimationDetail = () => {
       <StyledDetailLayout>
         <AnimationContentLayout cover={data.coverImage.large} title={data.title.english} description={data.description} />
         <AnimationInfoLayout data={data} />
+        <RelationList relations={data.relations} />
       </StyledDetailLayout>
     </>
   );
