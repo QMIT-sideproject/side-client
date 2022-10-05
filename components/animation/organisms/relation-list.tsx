@@ -12,10 +12,10 @@ const RelationList = ({ relations }: Pick<AnimationDetailType, 'relations'>) => 
 
 const RelationLayout = styled.section`
   padding: 30px 0;
-  display: flex;
-  flex-wrap: wrap;
   gap: 30px;
-  /* grid-template-columns: repeat(12, 1fr); */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 90px);
+  place-content: center;
 `;
 
 export default RelationList;
