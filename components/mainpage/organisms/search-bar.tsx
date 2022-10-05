@@ -1,21 +1,21 @@
 import styled from '@emotion/styled';
 import Filter from '../molecules/filter';
-import SearchInput from '../atoms/search-input';
+import Input from '../atoms/input';
 
-const filterNames= ['Genre', 'Streaming On', 'Airing Stauts'];
+const filterNames = ['Genre', 'Streaming On', 'Airing Stauts'];
 
-const SearchNavBar = () => {
+const Filters = () => {
   return (
-    <SearchNav>
-      <SearchInput />
+    <FiltersContainer>
+      <Input />
       {filterNames.map((name, key) => (
         <Filter name={name} key={key} />
       ))}
-    </SearchNav>
+    </FiltersContainer>
   );
 };
 
-const SearchNav = styled.div`
+const FiltersContainer = styled.div`
   width: 70%;
   height: 80px;
   display: flex;
@@ -23,4 +23,4 @@ const SearchNav = styled.div`
   margin: auto;
 `;
 
-export default SearchNavBar;
+export default Filters;

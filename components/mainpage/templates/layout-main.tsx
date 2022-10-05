@@ -1,68 +1,17 @@
-import { useQuery } from '@apollo/client';
-import { gql } from '@apollo/client';
-
-import AniList from '../organisms/ani-list';
-import SearchNavBar from '../organisms/search-nav';
-import SkeletonAniList from '../organisms/skeleton-ani-list';
-
-const GET_TRENDING_ANI_LIST = gql`
-  query ($page: Int, $perPage: Int, $sort: [MediaSort]) {
-    Page(page: $page, perPage: $perPage) {
-      media(sort: $sort) {
-        title {
-          english
-        }
-        coverImage {
-          large
-        }
-        id
-      }
-    }
-  }
-`;
-
-interface AniType {
-  title: {
-    english: string;
-  };
-  coverImage: {
-    large: string;
-  };
-  id: number;
-}
-
-interface DataType {
-  Page: {
-    media: AniType[];
-  };
-}
-interface VariablesType {
-  page: number;
-  perPage: number;
-  sort: string;
-}
+import AniList from '../organisms/animation-list';
+import SearchNavBar from '../organisms/search-bar';
+import SkeletonAniList from '../organisms/skeleton-list';
+import GetAnimationsHook from '../../../hooks/get-animations';
 
 const MainLayout = () => {
-  const { loading, data } = useQuery<DataType, VariablesType>(GET_TRENDING_ANI_LIST, {
-    variables: { page: 1, perPage: 20, sort: 'FAVOURITES_DESC' },
-  });
-  if (loading) {
-    return (
-      <>
-        <SearchNavBar />
-        <SkeletonAniList />
-      </>
-    );
-  }
+  const { data, loading } = GetAnimationsHook();
 
-  if (data) {
-    return (
-      <>
-        <SearchNavBar />
-        <AniList ani={data?.Page?.media} />
-      </>
-    );
-  }
+  return (
+    <>
+      <SearchNavBar />
+      {loading ? <SkeletonAniList /> : !data ? <div>error</div> : <AniList animations={data?.Page?.media} />}
+    </>
+  );
 };
 
 export default MainLayout;
