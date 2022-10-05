@@ -54,20 +54,16 @@ export interface AnimationDetailType {
   episodes: number;
   relations: {
     edges: [
-      relatonType: RelationType,
-      node: {
-        id: number;
-        title: {
-          english: string;
-        };
-        description: string;
-        coverImage: {
-          large: string;
-        };
-        bannerImage: string;
-        trailer: {
-          id: string;
-          site: string;
+      {
+        relationType: RelationType;
+        node: {
+          id: number;
+          title: {
+            english: string;
+          };
+          coverImage: {
+            large: string;
+          };
         };
       },
     ];
@@ -116,14 +112,8 @@ export const GET_ANIMATION_DETAIL = gql`
             title {
               english
             }
-            description
             coverImage {
               large
-            }
-            bannerImage
-            trailer {
-              id
-              site
             }
           }
         }
