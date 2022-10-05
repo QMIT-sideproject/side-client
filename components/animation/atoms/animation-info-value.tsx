@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
-interface AnimationInfoValueProps {
-  value: string;
+interface Props {
+  value: string | number;
 }
 
-const AnimationInfoValue = ({ value }: AnimationInfoValueProps) => {
+const AnimationInfoValue = ({ value }: Props) => {
   return <StyledAnimationInfoValue>{value}</StyledAnimationInfoValue>;
 };
 
 const StyledAnimationInfoValue = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
 `;
 

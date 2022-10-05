@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationTitleProps {
+interface Props {
   title: string;
 }
 
-const AnimationTitle = ({ title }: AnimationTitleProps) => {
+const AnimationTitle = ({ title }: Props) => {
   return (
     <>
       <StyledAnimationTitle>{title}</StyledAnimationTitle>
@@ -14,7 +14,7 @@ const AnimationTitle = ({ title }: AnimationTitleProps) => {
 };
 
 const StyledAnimationTitle = styled.h2`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 `;
 

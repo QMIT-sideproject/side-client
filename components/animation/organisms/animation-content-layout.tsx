@@ -2,11 +2,17 @@ import styled from '@emotion/styled';
 import AnimationCover from '../atoms/animation-cover';
 import AnimationContent from '../molecules/animation-content';
 
-const AnimationContentLayout = () => {
+interface Props {
+  cover: string;
+  title: string;
+  description: string;
+}
+
+const AnimationContentLayout = ({ cover, title, description }: Props) => {
   return (
     <StyledContentLayout>
-      <AnimationCover cover="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-C6FPmWm59CyP.jpg" />
-      <AnimationContent />
+      <AnimationCover cover={cover} />
+      <AnimationContent title={title} description={description} />
     </StyledContentLayout>
   );
 };

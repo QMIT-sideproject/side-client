@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-interface AnimationDescriptionProps {
+interface Props {
   description: string;
 }
 
-const AnimationDescription = ({ description }: AnimationDescriptionProps) => {
+const AnimationDescription = ({ description }: Props) => {
   return (
     <>
       {description.split('<br>').map((text, index) => {
@@ -20,7 +20,7 @@ const AnimationDescription = ({ description }: AnimationDescriptionProps) => {
 };
 
 const StyledAnimationDescription = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   color: #777;
 `;
 

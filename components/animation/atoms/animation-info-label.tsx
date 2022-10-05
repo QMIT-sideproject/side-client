@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
-interface AnimationInfoLabelProps {
+interface Props {
   label: string;
 }
 
-const AnimationInfoLabel = ({ label }: AnimationInfoLabelProps) => {
+const AnimationInfoLabel = ({ label }: Props) => {
   return <StyledAnimationInfoLabel>{label}</StyledAnimationInfoLabel>;
 };
 
 const StyledAnimationInfoLabel = styled.div`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 `;
 

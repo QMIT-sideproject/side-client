@@ -17,6 +17,7 @@
     "graphql": "^16.6.0",
     "mobx": "^6.6.2",
     "mobx-state-tree": "^5.1.6",
+    "moment": "^2.29.4",
     "next": "12.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
