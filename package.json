@@ -15,6 +15,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "graphql": "^16.6.0",
+    "html-react-parser": "^3.0.4",
     "mobx": "^6.6.2",
     "mobx-state-tree": "^5.1.6",
     "moment": "^2.29.4",
