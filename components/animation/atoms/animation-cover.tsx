@@ -1,15 +1,11 @@
-import styled from '@emotion/styled';
+import Image from 'next/image';
 
 interface Props {
   cover: string;
 }
 
 const AnimationCover = ({ cover }: Props) => {
-  return <StyledanimationCover src={cover} />;
+  return <Image src={cover} alt="커버 이미지" layout="fill" objectFit="cover" />;
 };
-
-const StyledanimationCover = styled.img`
-  width: 100%;
-`;
 
 export default AnimationCover;
