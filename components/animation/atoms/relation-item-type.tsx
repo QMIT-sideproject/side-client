@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface Props {
-  children?: string;
+  children: string;
 }
 
 const RelationItemType = ({ children }: Props) => {
