@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import AnimationCover from '../atoms/animation-cover';
+import Image from '../atoms/image';
 import AnimationContent from '../molecules/animation-content';
 
 interface Props {
@@ -8,18 +8,18 @@ interface Props {
   description: string;
 }
 
-const AnimationContentLayout = ({ cover, title, description }: Props) => {
+const AnimationOverview = ({ cover, title, description }: Props) => {
   return (
-    <StyledContentLayout>
+    <AnimationOverviewContainer>
       <AnimationCoverWrapper>
-        <AnimationCover cover={cover} />
+        <Image imgUrl={cover} alt="커버 이미지" />
       </AnimationCoverWrapper>
       <AnimationContent title={title} description={description} />
-    </StyledContentLayout>
+    </AnimationOverviewContainer>
   );
 };
 
-const StyledContentLayout = styled.section`
+const AnimationOverviewContainer = styled.section`
   display: flex;
   gap: 30px;
   padding: 30px 0;
@@ -31,4 +31,4 @@ const AnimationCoverWrapper = styled.div`
   height: 300px;
 `;
 
-export default AnimationContentLayout;
+export default AnimationOverview;
