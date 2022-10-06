@@ -11,9 +11,9 @@ const AnimationDetail = () => {
 
   const { data, loading } = useAnimationDetail(id, 2);
 
-  if (loading) return <div>로딩중...</div>;
+  if (loading) return <div>Loading...</div>;
 
-  if (!data) return null;
+  if (!data) return <div>Invalid Animation</div>;
 
   return (
     <>
