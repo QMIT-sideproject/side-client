@@ -8,8 +8,8 @@ const Filters = () => {
   return (
     <FiltersContainer>
       <Input />
-      {filterNames.map((name, key) => (
-        <Filter name={name} key={key} />
+      {filterNames.map((name) => (
+        <Filter name={name} key={name} />
       ))}
     </FiltersContainer>
   );
