@@ -9,8 +9,8 @@ interface Props {
 const AnimationList = ({ animations }: Props) => {
   return (
     <MainPageItemListContainer>
-      {animations.map((info, index) => (
-        <AniListItem key={index} name={info.title.english} img={info.coverImage.large} id={info.id} />
+      {animations.map((info) => (
+        <AniListItem key={info.id} name={info.title.english} img={info.coverImage.large} id={info.id} />
       ))}
     </MainPageItemListContainer>
   );
