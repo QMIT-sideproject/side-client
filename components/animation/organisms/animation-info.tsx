@@ -10,9 +10,9 @@ interface Props {
 }
 
 const AnimationInfo = ({ data }: Props) => {
-  const startDate = data.startDate.year ? stringToDateFormat(data.startDate.year, data.startDate.month, data.startDate.day) : null;
+  const startDate = stringToDateFormat(data.startDate.year, data.startDate.month, data.startDate.day);
 
-  const endDate = data.endDate.year ? stringToDateFormat(data.endDate.year, data.endDate.month, data.endDate.day) : null;
+  const endDate = stringToDateFormat(data.endDate.year, data.endDate.month, data.endDate.day);
 
   return (
     <AnimationInfoContainer>
