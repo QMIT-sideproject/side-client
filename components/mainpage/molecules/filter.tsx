@@ -1,23 +1,24 @@
-import FilterName from '../atoms/filter-name';
-import FilterBtn from '../atoms/filter-btn';
 import styled from '@emotion/styled';
 
-interface FilterInfo {
+import Name from '../atoms/name';
+import Select from '../atoms/select';
+
+interface Props {
   name: string;
 }
 
-const FilterBox = styled.div`
+const Filter = ({ name }: Props) => {
+  return (
+    <FilterContainer>
+      <Name name={name} />
+      <Select />
+    </FilterContainer>
+  );
+};
+
+const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const Filter = ({ name }: FilterInfo) => {
-  return (
-    <FilterBox>
-      <FilterName name={name} />
-      <FilterBtn />
-    </FilterBox>
-  );
-};
 
 export default Filter;
