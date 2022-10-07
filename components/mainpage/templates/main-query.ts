@@ -22,20 +22,23 @@ export interface VariablesType {
   sort: string;
   search: string | string[] | undefined;
   isAdult: boolean;
+  status: string | string[] | undefined;
 }
 
 export const GET_ANI_LIST = gql`
-query ($page: Int, $perPage: Int, $search: String, $sort: [MediaSort], $isAdult: Boolean) {
-  Page(page: $page, perPage: $perPage) {
-    media(search: $search, sort: $sort, isAdult: $isAdult) {
-      title {
-        english
+  query ($page: Int, $perPage: Int, $search: String, $sort: [MediaSort], $isAdult: Boolean, $status: MediaStatus) {
+    Page(page: $page, perPage: $perPage) {
+      media(search: $search, sort: $sort, isAdult: $isAdult, status: $status) {
+        title {
+          english
+        }
+        coverImage {
+          large
+        }
+        id
       }
-      coverImage {
-        large
-      }
-      id
     }
   }
-}
 `;
+
+export const airingTypes = ['any', 'RELEASING', 'FINISHED', 'NOT_YET_RELEASED', 'CANCELLED', 'HIATUS'];

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Filter from '../molecules/filter';
 import Input from '../atoms/input';
 
-const filterNames = ['Genre', 'Streaming On', 'Airing Stauts'];
+const filterNames = ['genre', 'streamingon', 'airingstatus'];
 
 const Filters = () => {
   return (
