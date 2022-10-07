@@ -20,20 +20,22 @@ export interface VariablesType {
   page: number;
   perPage: number;
   sort: string;
+  search: string | string[] | undefined;
+  isAdult: boolean;
 }
 
-export const GET_TRENDING_ANI_LIST = gql`
-  query ($page: Int, $perPage: Int, $sort: [MediaSort]) {
-    Page(page: $page, perPage: $perPage) {
-      media(sort: $sort) {
-        title {
-          english
-        }
-        coverImage {
-          large
-        }
-        id
+export const GET_ANI_LIST = gql`
+query ($page: Int, $perPage: Int, $search: String, $sort: [MediaSort], $isAdult: Boolean) {
+  Page(page: $page, perPage: $perPage) {
+    media(search: $search, sort: $sort, isAdult: $isAdult) {
+      title {
+        english
       }
+      coverImage {
+        large
+      }
+      id
     }
   }
+}
 `;
