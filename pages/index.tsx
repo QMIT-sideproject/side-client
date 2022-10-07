@@ -9,11 +9,11 @@ const MainpageWrapper = styled.div`
 `;
 
 const MainPage: NextPage = () => {
-  const { data, loading } = GetAnimationsHook();
+  const { data, loading, error } = GetAnimationsHook();
 
   return (
     <MainpageWrapper>
-      <MainLayout data={data} loading={loading}/>
+      <MainLayout data={data} loading={loading} error={error}/>
     </MainpageWrapper>
   );
 };

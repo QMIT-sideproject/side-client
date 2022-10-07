@@ -13,9 +13,9 @@ export const GetAnimationsHook = () => {
     setSearchText(query.search);
   }, [query, router.isReady])
 
-  const { data, loading } = useQuery<DataType, VariablesType>(GET_TRENDING_ANI_LIST, {
+  const { data, loading, error } = useQuery<DataType, VariablesType>(GET_TRENDING_ANI_LIST, {
     variables: { page: 1, perPage: 20, sort: 'FAVOURITES_DESC', search: searchText, isAdult: false},
   });
 
-  return { data, loading };
+  return { data, loading, error };
 };
