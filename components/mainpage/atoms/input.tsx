@@ -15,8 +15,11 @@ const Input = ({ type = 'text' }: Props) => {
   const onChangeInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
 
+    if(!e.target.value){
+      router.push(``);
+    }else{
       router.push(`?search=${e.target.value}`);
-
+    }
   };
 
   return <input type={type} value={inputText} onChange={onChangeInputText} css={[FilterDefaultStyle, SearchInputStyle]} />;
