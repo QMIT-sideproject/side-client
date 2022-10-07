@@ -1,11 +1,14 @@
 import AniList from '../organisms/animation-list';
 import SearchNavBar from '../organisms/search-bar';
 import SkeletonAniList from '../organisms/skeleton-list';
-import GetAnimationsHook from '../../../hooks/get-animations';
+import { DataType } from './main-query';
 
-const MainLayout = () => {
-  const { data, loading } = GetAnimationsHook();
+interface Props {
+  data?: DataType | undefined;
+  loading?: boolean;
+}
 
+const MainLayout = ({data, loading} : Props) => {
   return (
     <>
       <SearchNavBar />
