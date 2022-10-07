@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import MainLayout from '../components/mainpage/templates/layout-main';
-import { GetAnimationsHook } from 'hooks/get-animations';
+import { useGetAnimationsHook } from 'hooks/get-animations';
 import styled from '@emotion/styled';
 
 const MainpageWrapper = styled.div`
@@ -9,7 +9,7 @@ const MainpageWrapper = styled.div`
 `;
 
 const MainPage: NextPage = () => {
-  const { data, loading, error } = GetAnimationsHook();
+  const { data, loading, error } = useGetAnimationsHook();
 
   return (
     <MainpageWrapper>
