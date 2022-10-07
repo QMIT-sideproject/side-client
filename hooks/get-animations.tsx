@@ -2,7 +2,8 @@ import { useQuery } from '@apollo/client';
 import { GET_ANI_LIST, DataType, VariablesType } from '../components/mainpage/templates/main-query';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-export const GetAnimationsHook = () => {
+
+export const useGetAnimationsHook = () => {
   const router = useRouter();
   const query = router.query;
   const [searchText, setSearchText] = useState<string | string[] | undefined>('');
