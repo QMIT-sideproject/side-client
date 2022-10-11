@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { getEnabledCategories } from 'trace_events';
 import SubTitle from '../atoms/subtitle';
 import RelationItem from '../molecules/relation-item';
 import { AnimationDetailType } from '../templates/detail-query';
@@ -8,7 +9,9 @@ const RelationList = ({ relations }: Pick<AnimationDetailType, 'relations'>) => 
     <RelationListConatiner>
       <RelationTitle>Relations</RelationTitle>
       <RelationItemWrapper>
-        <RelationItem relations={relations} />
+        {relations.edges.map((edge) => {
+          return <RelationItem key={edge.node.id} node={edge.node} relationType={edge.relationType} />;
+        })}
       </RelationItemWrapper>
     </RelationListConatiner>
   );
@@ -24,10 +27,10 @@ const RelationTitle = styled(SubTitle)`
 `;
 
 const RelationItemWrapper = styled.div`
-  gap: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 90px);
-  place-content: start;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 15px;
+  justify-content: space-between;
 `;
 
 export default RelationList;

@@ -1,25 +1,33 @@
 import styled from '@emotion/styled';
 import Image from '../atoms/image';
-import { AnimationDetailType } from '../templates/detail-query';
+import { AnimationDetailType, AnimationRelationType } from '../templates/detail-query';
 
-const RelationItem = ({ relations }: Pick<AnimationDetailType, 'relations'>) => {
+interface Props {
+  relationType: AnimationRelationType;
+  node: {
+    id: number;
+    title: {
+      english: string;
+    };
+    coverImage: {
+      large: string;
+    };
+  };
+}
+
+const RelationItem = ({ relationType, node }: Props) => {
   return (
-    <>
-      {relations.edges.map((edge) => (
-        <RelationItemContainer key={edge.node.id}>
-          <Image imgUrl={edge.node.coverImage.large} alt="커버 이미지" />
-          <RelationType>{edge.relationType}</RelationType>
-        </RelationItemContainer>
-      ))}
-    </>
+    <RelationItemContainer key={node.id}>
+      <Image imgUrl={node.coverImage.large} alt="커버 이미지" />
+      <RelationType>{relationType}</RelationType>
+    </RelationItemContainer>
   );
 };
 
 const RelationItemContainer = styled.div`
   position: relative;
-  width: 90px;
-  height: 115px;
-  max-height: 115px;
+  width: 100%;
+  height: 200px;
   cursor: pointer;
 `;
 
@@ -29,7 +37,7 @@ const RelationType = styled.div`
   bottom: 0;
   padding: 10px 0;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
 `;
