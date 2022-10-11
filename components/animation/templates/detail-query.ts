@@ -52,6 +52,20 @@ export interface AnimationDetailType {
     day: number;
   };
   episodes: number;
+  stats: {
+    scoreDistribution: [
+      {
+        score: number;
+        amount: number;
+      },
+    ];
+    statusDistribution: [
+      {
+        status: string;
+        amount: number;
+      },
+    ];
+  };
   relations: {
     edges: [
       {
@@ -104,6 +118,16 @@ export const GET_ANIMATION_DETAIL = gql`
         day
       }
       episodes
+      stats {
+        scoreDistribution {
+          score
+          amount
+        }
+        statusDistribution {
+          status
+          amount
+        }
+      }
       relations {
         edges {
           relationType(version: $version)
