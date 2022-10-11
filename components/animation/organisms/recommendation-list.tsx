@@ -9,18 +9,18 @@ interface Props {
 
 const RecommendationList = ({ recommendations }: Props) => {
   return (
-    <RecommendationContainer>
+    <RecommendationListContainer>
       <RecommendationTitle>Recommendations</RecommendationTitle>
-      <RecommendationItemWrapper>
+      <RecommendationItemContainer>
         {recommendations.recommendations.nodes.map((recommendation) => {
           return <RecommendationItem key={recommendation.id} recommendation={recommendation} />;
         })}
-      </RecommendationItemWrapper>
-    </RecommendationContainer>
+      </RecommendationItemContainer>
+    </RecommendationListContainer>
   );
 };
 
-const RecommendationContainer = styled.section`
+const RecommendationListContainer = styled.section`
   padding: 30px 0;
 `;
 
@@ -29,7 +29,7 @@ const RecommendationTitle = styled(SubTitle)`
   margin-bottom: 20px;
 `;
 
-const RecommendationItemWrapper = styled.div`
+const RecommendationItemContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
   gap: 15px;
