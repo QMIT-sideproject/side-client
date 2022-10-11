@@ -82,6 +82,22 @@ export interface AnimationDetailType {
       },
     ];
   };
+  recommendations: {
+    nodes: [
+      {
+        id: number;
+        mediaRecommendation: {
+          id: number;
+          title: {
+            english: string;
+          };
+          coverImage: {
+            large: string;
+          };
+        };
+      },
+    ];
+  };
 }
 
 export interface AnimationDetailData {
@@ -91,10 +107,12 @@ export interface AnimationDetailData {
 export interface AnimationDetailVars {
   mediaId: number | undefined;
   version: number;
+  page: number;
+  perPage: number;
 }
 
 export const GET_ANIMATION_DETAIL = gql`
-  query Media($mediaId: Int, $version: Int) {
+  query Media($mediaId: Int, $version: Int, $page: Int, $perPage: Int) {
     Media(id: $mediaId) {
       id
       title {
@@ -132,6 +150,20 @@ export const GET_ANIMATION_DETAIL = gql`
         edges {
           relationType(version: $version)
           node {
+            id
+            title {
+              english
+            }
+            coverImage {
+              large
+            }
+          }
+        }
+      }
+      recommendations(page: $page, perPage: $perPage) {
+        nodes {
+          id
+          mediaRecommendation {
             id
             title {
               english
