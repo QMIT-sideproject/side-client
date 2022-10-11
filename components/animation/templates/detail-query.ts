@@ -1,32 +1,21 @@
 import { gql } from '@apollo/client';
 
-enum AnimationStatus {
-  'FINISHED',
-  'RELEASING',
-  'NOT_YET_RELEASED',
-  'CANCELLED',
-  'HIATUS',
-}
+type AnimationStatus = 'FINISHED' | 'RELEASING' | 'NOT_YET_RELEASED' | 'CANCELLED' | 'HIATUS';
 
-enum AnimationRelationType {
-  'ADAPTATION',
-  'PREQUEL',
-  'SEQUEL',
-  'PARENT',
-  'SIDE_STORY',
-  'CHARACTER',
-  'SUMMARY',
-  'ALTERNATIVE',
-  'SPIN_OFF',
-  'OTHER',
-  'SOURCE',
-  'COMPILATION',
-  'CONTAINS',
-}
-
-type Status = keyof typeof AnimationStatus;
-
-type RelationType = keyof typeof AnimationRelationType;
+export type AnimationRelationType =
+  | 'ADAPTATION'
+  | 'PREQUEL'
+  | 'SEQUEL'
+  | 'PARENT'
+  | 'SIDE_STORY'
+  | 'CHARACTER'
+  | 'SUMMARY'
+  | 'ALTERNATIVE'
+  | 'SPIN_OFF'
+  | 'OTHER'
+  | 'SOURCE'
+  | 'COMPILATION'
+  | 'CONTAINS';
 
 export interface AnimationDetailType {
   id: number;
@@ -39,7 +28,7 @@ export interface AnimationDetailType {
     large: string;
   };
 
-  status: Status;
+  status: AnimationStatus;
   genres: string[];
   startDate: {
     year: number;
@@ -69,7 +58,7 @@ export interface AnimationDetailType {
   relations: {
     edges: [
       {
-        relationType: RelationType;
+        relationType: AnimationRelationType;
         node: {
           id: number;
           title: {
