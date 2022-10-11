@@ -53,14 +53,18 @@ export interface AnimationDetailType {
   };
   episodes: number;
   stats: {
-    scoreDistribution: {
-      score: number;
-      amount: number;
-    };
-    statusDistribution: {
-      status: number;
-      amount: number;
-    };
+    scoreDistribution: [
+      {
+        score: number;
+        amount: number;
+      },
+    ];
+    statusDistribution: [
+      {
+        status: string;
+        amount: number;
+      },
+    ];
   };
   relations: {
     edges: [
