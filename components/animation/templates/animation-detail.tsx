@@ -5,6 +5,7 @@ import RelationList from '../organisms/relation-list';
 import AnimationContent from '../organisms/animation-overview';
 import AnimationInformation from '../organisms/animation-info';
 import AnimationChart from '../organisms/animation-chart';
+import RecommendationList from '../organisms/recommendation-list';
 
 const AnimationDetail = () => {
   const router = useRouter();
@@ -24,6 +25,7 @@ const AnimationDetail = () => {
         <AnimationInformation data={data} />
         <RelationList relations={data.relations} />
         <AnimationChart data={{ stats: data.stats }} />
+        <RecommendationList recommendations={{ recommendations: data.recommendations }} />
       </AnimationDetailContainer>
     </>
   );
