@@ -4,6 +4,7 @@ import useAnimationDetail from 'hooks/use-animation-detail';
 import RelationList from '../organisms/relation-list';
 import AnimationContent from '../organisms/animation-overview';
 import AnimationInformation from '../organisms/animation-info';
+import AnimationChart from '../organisms/animation-chart';
 
 const AnimationDetail = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const AnimationDetail = () => {
         <AnimationContent cover={data.coverImage.large} title={data.title.english} description={data.description} />
         <AnimationInformation data={data} />
         <RelationList relations={data.relations} />
+        <AnimationChart data={{ stats: data.stats }} />
       </AnimationDetailContainer>
     </>
   );
