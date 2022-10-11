@@ -16,26 +16,40 @@ export interface DataType {
   };
 }
 
+export interface GenreType {
+  GenreCollection: string[];
+}
+
 export interface VariablesType {
   page: number;
   perPage: number;
   sort: string;
   search: string | string[] | undefined;
   isAdult: boolean;
+  status: string | string[] | undefined;
+  genre: string | string[] | undefined;
 }
 
 export const GET_ANI_LIST = gql`
-query ($page: Int, $perPage: Int, $search: String, $sort: [MediaSort], $isAdult: Boolean) {
-  Page(page: $page, perPage: $perPage) {
-    media(search: $search, sort: $sort, isAdult: $isAdult) {
-      title {
-        english
+  query Page($status: MediaStatus, $isAdult: Boolean, $genre: String, $page: Int, $perPage: Int, $sort: [MediaSort], $search: String) {
+    Page(page: $page, perPage: $perPage) {
+      media(status: $status, isAdult: $isAdult, genre: $genre, sort: $sort, search: $search) {
+        title {
+          english
+        }
+        coverImage {
+          large
+        }
+        id
       }
-      coverImage {
-        large
-      }
-      id
     }
   }
-}
 `;
+
+export const GET_ANI_GENRE = gql`
+  query Query {
+    GenreCollection
+  }
+`;
+
+export const airingTypes = ['any', 'RELEASING', 'FINISHED', 'NOT_YET_RELEASED', 'CANCELLED', 'HIATUS'];

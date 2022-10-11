@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
-
 import Name from '../atoms/name';
 import Select from '../atoms/select';
 
 interface Props {
   name: string;
+  option: string[];
 }
 
-const Filter = ({ name }: Props) => {
+const Filter = ({ name, option }: Props) => {
   return (
     <FilterContainer>
       <Name name={name} />
-      <Select />
+      <Select options={option} filterName={name} />
     </FilterContainer>
   );
 };
