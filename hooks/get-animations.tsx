@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ANI_LIST, DataType, VariablesType } from '../components/mainpage/templates/main-query';
 import { useRouter } from 'next/router';
 
-export const useGetAnimationsHook = () => {
+export const useGetAnimations = () => {
   const router = useRouter();
   const query = router.query;
 
