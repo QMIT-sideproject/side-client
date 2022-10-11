@@ -8,7 +8,9 @@ const RelationList = ({ relations }: Pick<AnimationDetailType, 'relations'>) => 
     <RelationListConatiner>
       <RelationTitle>Relations</RelationTitle>
       <RelationItemWrapper>
-        <RelationItem relations={relations} />
+        {relations.edges.map((edge) => {
+          return <RelationItem key={edge.node.id} node={edge.node} relationType={edge.relationType} />;
+        })}
       </RelationItemWrapper>
     </RelationListConatiner>
   );
@@ -24,10 +26,10 @@ const RelationTitle = styled(SubTitle)`
 `;
 
 const RelationItemWrapper = styled.div`
-  gap: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 90px);
-  place-content: start;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 15px;
+  justify-content: space-between;
 `;
 
 export default RelationList;
