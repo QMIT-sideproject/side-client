@@ -27,8 +27,8 @@ const Select = ({ options, filterName }: Props) => {
 
   return (
     <select css={FilterDefaultStyle} onChange={onChange} value={filterValue}>
-      {options.map((airingType) => (
-        <option key={airingType}>{airingType}</option>
+      {options.map((optionItem) => (
+        <option key={optionItem}>{optionItem}</option>
       ))}
     </select>
   );
