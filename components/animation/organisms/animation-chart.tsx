@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import BarChart from '../molecules/bar-chart';
+import DoughnutChart from '../molecules/doughnut-chart';
 import { AnimationDetailType } from '../templates/detail-query';
 
 interface Props {
@@ -11,6 +12,9 @@ const AnimationChart = ({ data }: Props) => {
     <AnimationChartContainer>
       <ChartWrapper>
         <BarChart chartData={data.stats.scoreDistribution} />
+      </ChartWrapper>
+      <ChartWrapper>
+        <DoughnutChart chartData={data.stats.statusDistribution} />
       </ChartWrapper>
     </AnimationChartContainer>
   );
