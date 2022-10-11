@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import MainLayout from '../components/mainpage/templates/layout-main';
 import { useGetAnimations } from 'hooks/get-animations';
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
+import { DataType } from 'components/mainpage/templates/main-query';
 
 const MainpageWrapper = styled.div`
   width: 100%;
@@ -9,7 +11,7 @@ const MainpageWrapper = styled.div`
 `;
 
 const MainPage: NextPage = () => {
-  const { data, loading, error } = useGetAnimations();
+  const { data, loading, error } = useGetAnimations(1);
 
   return (
     <MainpageWrapper>
