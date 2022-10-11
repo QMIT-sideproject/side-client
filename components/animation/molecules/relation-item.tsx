@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import Image from '../atoms/image';
-import { AnimationDetailType, AnimationRelationType } from '../templates/detail-query';
+import { AnimationRelationType } from '../templates/detail-query';
 
 interface Props {
   relationType: AnimationRelationType;
@@ -17,18 +18,25 @@ interface Props {
 
 const RelationItem = ({ relationType, node }: Props) => {
   return (
-    <RelationItemContainer key={node.id}>
-      <Image imgUrl={node.coverImage.large} alt="커버 이미지" />
-      <RelationType>{relationType}</RelationType>
+    <RelationItemContainer href={`/animation/${node.id}`}>
+      <a>
+        <ReloationCoverWrapper>
+          <Image imgUrl={node.coverImage.large} alt="relation-cover" />
+        </ReloationCoverWrapper>
+        <RelationType>{relationType}</RelationType>
+      </a>
     </RelationItemContainer>
   );
 };
 
-const RelationItemContainer = styled.div`
+const RelationItemContainer = styled(Link)`
+  cursor: pointer;
+`;
+
+const ReloationCoverWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 200px;
-  cursor: pointer;
 `;
 
 const RelationType = styled.div`

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { getEnabledCategories } from 'trace_events';
 import SubTitle from '../atoms/subtitle';
 import RelationItem from '../molecules/relation-item';
 import { AnimationDetailType } from '../templates/detail-query';
