@@ -67,6 +67,8 @@ export interface AnimationDetailType {
           coverImage: {
             large: string;
           };
+          averageScore: number;
+          genres: string[];
         };
       },
     ];
@@ -83,6 +85,8 @@ export interface AnimationDetailType {
           coverImage: {
             large: string;
           };
+          averageScore: number;
+          genres: string[];
         };
       },
     ];
@@ -146,6 +150,8 @@ export const GET_ANIMATION_DETAIL = gql`
             coverImage {
               large
             }
+            averageScore
+            genres
           }
         }
       }
@@ -160,6 +166,8 @@ export const GET_ANIMATION_DETAIL = gql`
             coverImage {
               large
             }
+            averageScore
+            genres
           }
         }
       }
