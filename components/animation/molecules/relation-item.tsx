@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from '../atoms/image';
 import { AnimationRelationType } from '../templates/detail-query';
+import AnimationPopup from './animation-popup';
 
 interface Props {
   relationType: AnimationRelationType;
@@ -13,24 +14,34 @@ interface Props {
     coverImage: {
       large: string;
     };
+    averageScore: number;
+    genres: string[];
   };
 }
 
 const RelationItem = ({ relationType, node }: Props) => {
   return (
-    <RelationItemContainer href={`/animation/${node.id}`}>
-      <a>
-        <ReloationCoverWrapper>
-          <Image imgUrl={node.coverImage.large} alt="relation-cover" />
-        </ReloationCoverWrapper>
-        <RelationType>{relationType}</RelationType>
-      </a>
+    <RelationItemContainer>
+      <Link href={`/animation/${node.id}`}>
+        <a>
+          <ReloationCoverWrapper>
+            <Image imgUrl={node.coverImage.large} alt="relation-cover" />
+          </ReloationCoverWrapper>
+          <RelationType>{relationType}</RelationType>
+        </a>
+      </Link>
+      <AnimationPopup position="160" title={node.title.english} score={node.averageScore} genreList={node.genres} />
     </RelationItemContainer>
   );
 };
 
-const RelationItemContainer = styled(Link)`
+const RelationItemContainer = styled.div`
   cursor: pointer;
+
+  position: relative;
+  &:hover .popup {
+    opacity: 1;
+  }
 `;
 
 const ReloationCoverWrapper = styled.div`

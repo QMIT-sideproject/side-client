@@ -23,9 +23,10 @@ const GenreList = styled.div`
 
 const Genre = styled(Text)`
   color: #fff;
-  padding: 3px 10px;
+  padding: 3px 12px;
   background-color: rgba(54, 162, 235);
   border-radius: 20px;
+  font-size: 14px;
 `;
 
 export default PopupGenreList;
