@@ -36,6 +36,7 @@ const PopupContainer = styled.div<Pick<Props, 'position'>>`
   background-color: #fff;
   pointer-events: none;
   transition: 0.15s ease-in-out;
+  width: 220px;
 `;
 
 export default AnimationPopup;
