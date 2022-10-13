@@ -24,8 +24,8 @@ export const FilterDefaultStyle = css`
 `;
 export const SearchInputStyle = css`
   width: 240px;
-  margin-top: 25px;
   padding: 0 20px;
+  margin-top: 25px;
 `;
 
 export const SkeletonCommonStyle = styled.div`
