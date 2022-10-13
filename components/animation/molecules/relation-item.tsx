@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from '../atoms/image';
 import { AnimationRelationType } from '../templates/detail-query';
-import AnimationPopup from './animation-popup';
+import AnimationPopup from '../../common/animation-popup';
 
 interface Props {
   relationType: AnimationRelationType;

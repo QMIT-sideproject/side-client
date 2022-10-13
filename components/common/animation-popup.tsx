@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import PopupRating from '../atoms/popup-rating';
-import PopupTitle from '../atoms/popup-title';
+import PopupRating from './popup-rating';
+import PopupTitle from './popup-title';
 import PopupGenreList from './popup-genre-list';
 
 interface Props {
