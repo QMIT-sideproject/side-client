@@ -1,42 +1,56 @@
 import type { NextPage } from 'next';
+import styled from '@emotion/styled';
+
 import MainLayout from '../components/mainpage/templates/layout-main';
 import { useGetAnimations } from 'hooks/get-animations';
-import styled from '@emotion/styled';
 import { useEffect, useState, useRef } from 'react';
 import { AniType } from 'components/mainpage/templates/main-query';
-
-const MainpageWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-`;
+import { useRouter } from 'next/router';
 
 const MainPage: NextPage = () => {
+  const router = useRouter();
+  const lastRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+
   const [page, setPage] = useState(1);
   const { data, loading, error } = useGetAnimations(page);
-  const lastRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const [animation, setAnimation] = useState<AniType[]>([]);
+  const [urlPath, setUrlPath] = useState<string>(router.asPath);
 
   useEffect(() => {
-    let io: IntersectionObserver | undefined = undefined;
-
     if (data?.Page.media?.length) {
-      io = new IntersectionObserver(
-        (entries, observer) => {
+      if (urlPath !== router.asPath || animation.length === 0) {
+        setUrlPath(router.asPath);
+        setPage(1);
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
           const target = entries[0];
 
           if (target.isIntersecting) {
             setPage((page) => page + 1);
-            setAnimation((ani) => ani?.concat(data.Page.media));
-
-            observer.disconnect();
           }
         },
         { threshold: 1 },
       );
-      io.observe(lastRef.current);
-    }
-  }, [animation, data]);
 
+      io.observe(lastRef.current);
+
+      return () => {
+        io.disconnect();
+      };
+    }
+  }, [animation, data, router.asPath, urlPath]);
+
+  useEffect(() => {
+    if (!data) return;
+
+    if (page === 1) {
+      setAnimation(data.Page.media);
+    } else {
+      setAnimation((ani) => [...ani, ...data.Page.media]);
+    }
+  }, [data, page]);
   return (
     <MainpageWrapper>
       <MainLayout data={animation} loading={loading} error={error} />
@@ -44,5 +58,10 @@ const MainPage: NextPage = () => {
     </MainpageWrapper>
   );
 };
+
+const MainpageWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
 
 export default MainPage;
