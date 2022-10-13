@@ -57,20 +57,25 @@ const BarChart = ({ chartData }: Props) => {
               font: {
                 size: 14,
               },
-              color: '#000',
             },
             grid: {
               display: false,
             },
           },
           y: {
-            suggestedMax: Math.max(),
-            suggestedMin: Math.min(),
             title: {
               display: true,
               text: 'Votes',
               font: {
                 size: 16,
+              },
+              padding: {
+                bottom: 10,
+              },
+            },
+            ticks: {
+              font: {
+                size: 14,
               },
             },
             beginAtZero: true,
@@ -99,11 +104,11 @@ const BarChart = ({ chartData }: Props) => {
             delayed = true;
           },
           delay: (context) => {
-            let delay = 0;
             if (context.type === 'data' && context.mode === 'default' && !delayed) {
-              delay = context.dataIndex * 100 + context.datasetIndex * 100;
+              return context.dataIndex * 100 + context.datasetIndex * 100;
             }
-            return delay;
+
+            return 0;
           },
         },
       },

@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from '../atoms/image';
-import AnimationPopup from './animation-popup';
+import AnimationPopup from '../../common/animation-popup';
 
 interface Props {
   recommendation: {
     id: number;
-    mediaRecommendation: {
+    mediaRecommendation?: {
       id: number;
       title: {
         english: string;
+        native: string;
       };
       coverImage: {
         large: string;
@@ -21,22 +22,23 @@ interface Props {
 }
 
 const RecommendationItem = ({ recommendation }: Props) => {
+  const { mediaRecommendation } = recommendation;
+
+  if (!mediaRecommendation) return null;
+
+  const animationTitle = mediaRecommendation.title.english || mediaRecommendation.title.native;
+
   return (
     <RecommendationContainer>
-      <Link href={`/animation/${recommendation.mediaRecommendation.id}`}>
+      <Link href={`/animation/${mediaRecommendation.id}`}>
         <a>
           <RecommendationCoverWrapper>
-            <Image imgUrl={recommendation.mediaRecommendation.coverImage.large} alt="recommendation-cover" />
+            <Image imgUrl={mediaRecommendation.coverImage.large} alt="recommendation-cover" />
           </RecommendationCoverWrapper>
-          <RecommendationTitle>{recommendation.mediaRecommendation.title.english}</RecommendationTitle>
+          <RecommendationTitle>{animationTitle}</RecommendationTitle>
         </a>
       </Link>
-      <AnimationPopup
-        position="160"
-        title={recommendation.mediaRecommendation.title.english}
-        score={recommendation.mediaRecommendation.averageScore}
-        genreList={recommendation.mediaRecommendation.genres}
-      />
+      <AnimationPopup position="160" title={mediaRecommendation.title} score={mediaRecommendation.averageScore} genreList={mediaRecommendation.genres} />
     </RecommendationContainer>
   );
 };

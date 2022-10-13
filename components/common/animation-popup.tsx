@@ -1,20 +1,25 @@
 import styled from '@emotion/styled';
-import PopupRating from '../atoms/popup-rating';
-import PopupTitle from '../atoms/popup-title';
+import PopupRating from './popup-rating';
+import PopupTitle from './popup-title';
 import PopupGenreList from './popup-genre-list';
 
 interface Props {
   position: string;
-  title: string;
+  title: {
+    english: string;
+    native: string;
+  };
   score: number;
   genreList: string[];
 }
 
 const AnimationPopup = ({ position, ...props }: Props) => {
   const { title, score, genreList } = props;
+  const animationTitle = title.english || title.native;
+
   return (
     <PopupContainer position={position} className="popup">
-      <PopupTitle>{title}</PopupTitle>
+      <PopupTitle>{animationTitle}</PopupTitle>
       <PopupRating>{`${score}%`}</PopupRating>
       <PopupGenreList genreList={genreList} />
     </PopupContainer>
@@ -36,7 +41,7 @@ const PopupContainer = styled.div<Pick<Props, 'position'>>`
   background-color: #fff;
   pointer-events: none;
   transition: 0.15s ease-in-out;
-  width: 220px;
+  width: 230px;
 `;
 
 export default AnimationPopup;

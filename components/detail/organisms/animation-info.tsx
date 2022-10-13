@@ -24,7 +24,7 @@ const AnimationInfo = ({ data }: Props) => {
         <GenreLabel>Genres</GenreLabel>
         <AnimationGenreValueWrapper>
           {data.genres.map((genre) => (
-            <GenreLink key={genre} href={`/search/${genre}`}>
+            <GenreLink key={genre} href={`/?genre=${genre}`}>
               {genre}
             </GenreLink>
           ))}

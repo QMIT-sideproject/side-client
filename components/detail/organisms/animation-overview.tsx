@@ -4,7 +4,10 @@ import AnimationContent from '../molecules/animation-content';
 
 interface Props {
   cover: string;
-  title: string;
+  title: {
+    english: string;
+    native: string;
+  };
   description: string;
 }
 

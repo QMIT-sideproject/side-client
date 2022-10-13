@@ -21,7 +21,7 @@ const RecommendationList = ({ recommendations }: Props) => {
 };
 
 const RecommendationListContainer = styled.section`
-  padding: 30px 0;
+  padding-bottom: 30px;
 `;
 
 const RecommendationTitle = styled(SubTitle)`

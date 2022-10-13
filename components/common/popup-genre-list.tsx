@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Text from '../atoms/text';
+import Text from '../detail/atoms/text';
 
 interface Props {
   genreList: string[];

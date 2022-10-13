@@ -1,4 +1,4 @@
-import AnimationDetail from '@components/animation/templates/animation-detail';
+import AnimationDetail from 'components/detail/templates/animation-detail';
 
 const AnimationDetailPage = () => {
   return <AnimationDetail />;

@@ -10,7 +10,6 @@ import RecommendationList from '../organisms/recommendation-list';
 const AnimationDetail = () => {
   const router = useRouter();
   const { id } = router.query;
-
   const { data, loading } = useAnimationDetail(id, 2);
 
   if (loading) return <div>Loading...</div>;
@@ -21,7 +20,7 @@ const AnimationDetail = () => {
     <>
       <AnimationBanner banner={data.bannerImage} />
       <AnimationDetailContainer>
-        <AnimationContent cover={data.coverImage.large} title={data.title.english} description={data.description} />
+        <AnimationContent cover={data.coverImage.large} title={data.title} description={data.description} />
         <AnimationInformation data={data} />
         <RelationList relations={data.relations} />
         <AnimationChart data={{ stats: data.stats }} />

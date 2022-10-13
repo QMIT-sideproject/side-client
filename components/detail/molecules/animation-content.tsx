@@ -4,14 +4,19 @@ import SubTitle from '../atoms/subtitle';
 import Text from '../atoms/text';
 
 interface Props {
-  title: string;
+  title: {
+    english: string;
+    native: string;
+  };
   description: string;
 }
 
 const AnimationContent = ({ title, description }: Props) => {
+  const animationTitle = title.english || title.native;
+
   return (
     <AnimationContentContainer>
-      <AnimationTitle>{title}</AnimationTitle>
+      <AnimationTitle>{animationTitle}</AnimationTitle>
       <AnimationDescription>{parse(description)}</AnimationDescription>
     </AnimationContentContainer>
   );
