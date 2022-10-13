@@ -6,6 +6,7 @@ import { useGetAnimations } from 'hooks/get-animations';
 import { useEffect, useState, useRef } from 'react';
 import { AniType } from 'components/mainpage/templates/main-query';
 import { useRouter } from 'next/router';
+import SkeletonAniList from '../components/mainpage/organisms/skeleton-list';
 
 const MainPage: NextPage = () => {
   const router = useRouter();
@@ -51,9 +52,11 @@ const MainPage: NextPage = () => {
       setAnimation((ani) => [...ani, ...data.Page.media]);
     }
   }, [data, page]);
+
   return (
     <MainpageWrapper>
-      <MainLayout data={animation} loading={loading} error={error} />
+      {error ? <div>error!!</div> : <MainLayout data={animation} />}
+      {loading && <SkeletonAniList />}
       <div ref={lastRef}></div>
     </MainpageWrapper>
   );

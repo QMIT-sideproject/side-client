@@ -6,21 +6,19 @@ import { airingTypes } from '../templates/main-query';
 
 const filterNames = ['genre', 'streamingon', 'airingstatus'];
 
-const deepCopy = (data: string[]) => {
-  const newObj = Object.assign([], data);
-  newObj.unshift('any');
+const deepCopy = (data?: string[]) => {
+  if (!data) return ['any'];
 
-  return newObj;
+  const copyItem = Object.assign([], data);
+  copyItem.unshift('any');
+
+  return copyItem;
 };
 
 const Filters = () => {
-  const { data, loading, error } = useGetGenre();
-  if (loading) {
-    return <div>로딩중...</div>;
-  } else if (!data || error) {
-    return <div>오류가 발생하였습니다.</div>;
-  }
-  const filterOptions = [deepCopy(data.GenreCollection), ['any'], airingTypes];
+  const { data } = useGetGenre();
+
+  const filterOptions = [deepCopy(data?.GenreCollection), ['any'], airingTypes];
   return (
     <FiltersContainer>
       <Input />
