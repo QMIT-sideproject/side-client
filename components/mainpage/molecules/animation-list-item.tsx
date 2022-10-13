@@ -1,6 +1,6 @@
 import Img from '../atoms/image';
 import Name from '../atoms/name';
-import { AnimationListItemContainer } from './styles';
+import { AnimationDetailLink } from './styles';
 
 interface Props {
   name: string;
@@ -10,12 +10,12 @@ interface Props {
 
 const AnimationListItem = ({ name, img, id }: Props) => {
   return (
-    <AnimationListItemContainer href={{ pathname: '/detail/[id]', query: { id: id } }}>
+    <AnimationDetailLink href={{ pathname: '/detail/[id]', query: { id: id } }}>
       <a>
         <Img img={img} width={'185px'} height={'265px'} />
         <Name name={name} />
       </a>
-    </AnimationListItemContainer>
+    </AnimationDetailLink>
   );
 };
 

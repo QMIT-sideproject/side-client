@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-export const AnimationListItemContainer = styled(Link)`
+export const AnimationDetailLink = styled(Link)`
   cursor: pointer;
   width: 185px;
 `;
