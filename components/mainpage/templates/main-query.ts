@@ -3,10 +3,13 @@ import { gql } from '@apollo/client';
 export interface AniType {
   title: {
     english: string;
+    native: string;
   };
   coverImage: {
     large: string;
   };
+  genres: string[];
+  averageScore: number;
   id: number;
 }
 
@@ -36,10 +39,13 @@ export const GET_ANI_LIST = gql`
       media(status: $status, isAdult: $isAdult, genre: $genre, sort: $sort, search: $search) {
         title {
           english
+          native
         }
         coverImage {
           large
         }
+        genres
+        averageScore
         id
       }
     }
