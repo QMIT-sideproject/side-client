@@ -12,8 +12,7 @@ interface Props {
 
 const DoughnutChart = ({ chartData }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  chartData = chartData.sort((a, b) => b.amount - a.amount);
+  const sortedData = [...chartData].sort((a, b) => b.amount - a.amount);
 
   useEffect(() => {
     const ctx = canvasRef.current?.getContext('2d');
@@ -23,11 +22,11 @@ const DoughnutChart = ({ chartData }: Props) => {
     const chart = new ChartConstructor(ctx, {
       type: 'doughnut',
       data: {
-        labels: chartData.map((data) => data.status),
+        labels: sortedData.map((data) => data.status),
         datasets: [
           {
             label: 'Dataset 1',
-            data: chartData.map((data) => data.amount),
+            data: sortedData.map((data) => data.amount),
             backgroundColor: [
               'rgba(255, 99, 132)',
               'rgba(54, 162, 235)',
@@ -63,7 +62,7 @@ const DoughnutChart = ({ chartData }: Props) => {
     return () => {
       chart.destroy();
     };
-  }, [chartData]);
+  }, [sortedData]);
 
   return (
     <CanvasWrapper>
