@@ -39,6 +39,7 @@ const BarChart = ({ chartData }: Props) => {
         ],
       },
       options: {
+        indexAxis: 'y',
         maintainAspectRatio: false, // 크기 변경 시 원래 캔버스 종횡비 유지 X
         responsive: true,
         scales: {
@@ -57,20 +58,25 @@ const BarChart = ({ chartData }: Props) => {
               font: {
                 size: 14,
               },
-              color: '#000',
             },
             grid: {
               display: false,
             },
           },
           y: {
-            suggestedMax: Math.max(),
-            suggestedMin: Math.min(),
             title: {
               display: true,
               text: 'Votes',
               font: {
                 size: 16,
+              },
+              padding: {
+                bottom: 10,
+              },
+            },
+            ticks: {
+              font: {
+                size: 14,
               },
             },
             beginAtZero: true,

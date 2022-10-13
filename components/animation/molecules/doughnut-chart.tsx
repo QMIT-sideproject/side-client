@@ -36,6 +36,7 @@ const DoughnutChart = ({ chartData }: Props) => {
               'rgba(153, 102, 25)',
               'rgba(255, 159, 64)',
             ],
+            hoverOffset: 15,
           },
         ],
       },
