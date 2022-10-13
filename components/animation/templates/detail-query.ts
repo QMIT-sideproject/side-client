@@ -21,6 +21,7 @@ export interface AnimationDetailType {
   id: number;
   title: {
     english: string;
+    native: string;
   };
   description: string;
   bannerImage: string;
@@ -63,6 +64,7 @@ export interface AnimationDetailType {
           id: number;
           title: {
             english: string;
+            native: string;
           };
           coverImage: {
             large: string;
@@ -81,6 +83,7 @@ export interface AnimationDetailType {
           id: number;
           title: {
             english: string;
+            native: string;
           };
           coverImage: {
             large: string;
@@ -110,6 +113,7 @@ export const GET_ANIMATION_DETAIL = gql`
       id
       title {
         english
+        native
       }
       description
       bannerImage
@@ -146,6 +150,7 @@ export const GET_ANIMATION_DETAIL = gql`
             id
             title {
               english
+              native
             }
             coverImage {
               large
@@ -162,6 +167,7 @@ export const GET_ANIMATION_DETAIL = gql`
             id
             title {
               english
+              native
             }
             coverImage {
               large

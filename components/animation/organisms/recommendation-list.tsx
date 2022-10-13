@@ -8,6 +8,8 @@ interface Props {
 }
 
 const RecommendationList = ({ recommendations }: Props) => {
+  console.log(recommendations.recommendations.nodes);
+
   return (
     <RecommendationListContainer>
       <RecommendationTitle>Recommendations</RecommendationTitle>

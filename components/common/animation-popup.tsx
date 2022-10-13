@@ -5,16 +5,21 @@ import PopupGenreList from './popup-genre-list';
 
 interface Props {
   position: string;
-  title: string;
+  title: {
+    english: string;
+    native: string;
+  };
   score: number;
   genreList: string[];
 }
 
 const AnimationPopup = ({ position, ...props }: Props) => {
   const { title, score, genreList } = props;
+  const animationTitle = title.english || title.native;
+
   return (
     <PopupContainer position={position} className="popup">
-      <PopupTitle>{title}</PopupTitle>
+      <PopupTitle>{animationTitle}</PopupTitle>
       <PopupRating>{`${score}%`}</PopupRating>
       <PopupGenreList genreList={genreList} />
     </PopupContainer>
