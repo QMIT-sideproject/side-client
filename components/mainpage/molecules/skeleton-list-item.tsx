@@ -1,13 +1,13 @@
 import SkeletonImg from '../atoms/skeleton-image';
 import SkeletonName from '../atoms/skeleton-name';
-import { AnimationListItemContainer } from './styles';
+import { SkeletonListItemContainer } from './styles';
 
 const SkeletonListItem = () => {
   return (
-    <AnimationListItemContainer skeleton>
+    <SkeletonListItemContainer>
       <SkeletonImg />
       <SkeletonName />
-    </AnimationListItemContainer>
+    </SkeletonListItemContainer>
   );
 };
 

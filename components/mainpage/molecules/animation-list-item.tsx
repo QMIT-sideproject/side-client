@@ -10,9 +10,11 @@ interface Props {
 
 const AnimationListItem = ({ name, img, id }: Props) => {
   return (
-    <AnimationListItemContainer onClick={() => console.log(id)}>
-      <Img img={img} width={'185px'} height={'265px'} />
-      <Name name={name} />
+    <AnimationListItemContainer href={{ pathname: '/detail/[id]', query: { id: id } }}>
+      <a>
+        <Img img={img} width={'185px'} height={'265px'} />
+        <Name name={name} />
+      </a>
     </AnimationListItemContainer>
   );
 };
