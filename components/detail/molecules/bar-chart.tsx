@@ -39,7 +39,6 @@ const BarChart = ({ chartData }: Props) => {
         ],
       },
       options: {
-        indexAxis: 'y',
         maintainAspectRatio: false, // 크기 변경 시 원래 캔버스 종횡비 유지 X
         responsive: true,
         scales: {
@@ -105,11 +104,11 @@ const BarChart = ({ chartData }: Props) => {
             delayed = true;
           },
           delay: (context) => {
-            let delay = 0;
             if (context.type === 'data' && context.mode === 'default' && !delayed) {
-              delay = context.dataIndex * 100 + context.datasetIndex * 100;
+              return context.dataIndex * 100 + context.datasetIndex * 100;
             }
-            return delay;
+
+            return 0;
           },
         },
       },
