@@ -5,12 +5,13 @@ import Select from '../atoms/select';
 interface Props {
   name: string;
   option: string[];
+  korean: string;
 }
 
-const Filter = ({ name, option }: Props) => {
+const Filter = ({ name, option, korean }: Props) => {
   return (
     <FilterContainer>
-      <Name name={name} />
+      <Name name={korean} />
       <Select options={option} filterName={name} />
     </FilterContainer>
   );

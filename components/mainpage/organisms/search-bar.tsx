@@ -5,6 +5,7 @@ import { useGetGenre } from '../../../hooks/get-animation-genre';
 import { airingTypes, streamingSites } from '../templates/main-query';
 
 const filterNames = ['genre', 'streamingon', 'airingstatus'];
+const koreanNames = ['장르', '스트리밍 사이트', '방영 상태'];
 
 const deepCopy = (data?: string[]) => {
   if (!data) return ['any'];
@@ -23,7 +24,7 @@ const Filters = () => {
     <FiltersContainer>
       <Input />
       {filterNames.map((name, index) => (
-        <Filter name={name} key={name} option={filterOptions[index]} />
+        <Filter name={name} key={name} option={filterOptions[index]} korean={koreanNames[index]} />
       ))}
     </FiltersContainer>
   );
@@ -34,7 +35,7 @@ const FiltersContainer = styled.div`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  margin: auto;
+  margin: 30px auto;
 `;
 
 export default Filters;

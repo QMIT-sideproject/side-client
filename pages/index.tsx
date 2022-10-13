@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from 'react';
 import { AniType } from 'components/mainpage/templates/main-query';
 import { useRouter } from 'next/router';
 import SkeletonAniList from '../components/mainpage/organisms/skeleton-list';
+import Header from 'components/common/header';
 
 const MainPage: NextPage = () => {
   const router = useRouter();
@@ -55,6 +56,7 @@ const MainPage: NextPage = () => {
 
   return (
     <MainpageWrapper>
+      <Header />
       {error ? <div>error!!</div> : <MainLayout data={animation} />}
       {loading && <SkeletonAniList />}
       <div ref={lastRef}></div>

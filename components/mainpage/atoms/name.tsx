@@ -3,7 +3,7 @@ interface Props {
 }
 
 const Name = ({ name }: Props) => {
-  return <span>{name}</span>;
+  return <span style={{ fontSize: '15px' }}>{name}</span>;
 };
 
 export default Name;
