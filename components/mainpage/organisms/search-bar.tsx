@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Filter from '../molecules/filter';
 import Input from '../atoms/input';
 import { useGetGenre } from '../../../hooks/get-animation-genre';
-import { airingTypes } from '../templates/main-query';
+import { airingTypes, streamingSites } from '../templates/main-query';
 
 const filterNames = ['genre', 'streamingon', 'airingstatus'];
 
@@ -17,8 +17,8 @@ const deepCopy = (data?: string[]) => {
 
 const Filters = () => {
   const { data } = useGetGenre();
+  const filterOptions = [deepCopy(data?.GenreCollection), streamingSites, airingTypes];
 
-  const filterOptions = [deepCopy(data?.GenreCollection), ['any'], airingTypes];
   return (
     <FiltersContainer>
       <Input />
