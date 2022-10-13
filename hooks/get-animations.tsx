@@ -7,7 +7,16 @@ export const useGetAnimations = (page: number) => {
   const query = router.query;
 
   const { data, loading, error } = useQuery<DataType, VariablesType>(GET_ANI_LIST, {
-    variables: { page: page, perPage: 20, sort: 'FAVOURITES_DESC', search: query.search, isAdult: false, status: query.airingstatus, genre: query.genre },
+    variables: {
+      page: page,
+      perPage: 20,
+      sort: 'FAVOURITES_DESC',
+      search: query.search,
+      isAdult: false,
+      status: query.airingstatus,
+      genre: query.genre,
+      licensedBy: query.streamingon,
+    },
   });
 
   return { data, loading, error };

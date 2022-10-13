@@ -27,8 +27,7 @@ const Select = ({ options, filterName }: Props) => {
     } else {
       router.query[filterName] = e.target.value;
     }
-
-    router.push(router);
+    router.push({ pathname: '/', query: { ...router.query } });
   };
 
   return (
