@@ -23,7 +23,7 @@ const AnimationListItem = ({ name, img, id, score, genre }: Props) => {
           <Name name={name.english || name.native} />
         </a>
       </AnimationDetailLink>
-      <AnimationPopup position="200" title={name} score={score} genreList={genre}></AnimationPopup>
+      <AnimationPopup position="200" title={name} score={score} genreList={genre} />
     </AnimationListItemContainer>
   );
 };
