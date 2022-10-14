@@ -6,6 +6,7 @@ import AnimationContent from '../organisms/animation-overview';
 import AnimationInformation from '../organisms/animation-info';
 import AnimationChart from '../organisms/animation-chart';
 import RecommendationList from '../organisms/recommendation-list';
+import Header from 'components/common/header';
 
 const AnimationDetail = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const AnimationDetail = () => {
 
   return (
     <>
+      <Header />
       <AnimationBanner banner={data.bannerImage} />
       <AnimationDetailContainer>
         <AnimationContent cover={data.coverImage.large} title={data.title} description={data.description} />
@@ -33,6 +35,7 @@ const AnimationDetail = () => {
 const AnimationBanner = styled.div<{ banner: string }>(({ banner }) => ({
   width: '100%',
   height: '400px',
+  marginTop: '-80px',
   backgroundImage: `url(${banner})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
