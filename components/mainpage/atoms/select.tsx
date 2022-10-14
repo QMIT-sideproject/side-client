@@ -22,7 +22,7 @@ const Select = ({ options, filterName }: Props) => {
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFilterValue(e.target.value);
 
-    if (e.target.value === 'any') {
+    if (e.target.value === 'any' || e.target.value === 'Favorite') {
       router.query[filterName] = [];
     } else {
       router.query[filterName] = e.target.value;

@@ -4,8 +4,9 @@ import Input from '../atoms/input';
 import { useGetGenre } from '../../../hooks/get-animation-genre';
 import { airingTypes, streamingSites } from '../templates/main-query';
 
-const filterNames = ['genre', 'streamingon', 'airingstatus'];
-const koreanNames = ['장르', '스트리밍 사이트', '방영 상태'];
+const filterNames = ['genre', 'streamingon', 'airingstatus', 'sort'];
+const koreanNames = ['장르', '스트리밍 사이트', '방영 상태', '정렬 상태'];
+const sort = ['Favorite', 'Trending'];
 
 const deepCopy = (data?: string[]) => {
   if (!data) return ['any'];
@@ -18,7 +19,7 @@ const deepCopy = (data?: string[]) => {
 
 const Filters = () => {
   const { data } = useGetGenre();
-  const filterOptions = [deepCopy(data?.GenreCollection), streamingSites, airingTypes];
+  const filterOptions = [deepCopy(data?.GenreCollection), streamingSites, airingTypes, sort];
 
   return (
     <FiltersContainer>
