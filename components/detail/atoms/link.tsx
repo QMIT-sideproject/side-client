@@ -1,14 +1,15 @@
+import { ReactNode } from 'react';
 import LinkComponent from 'next/link';
 
 interface Props {
   href: string;
-  children: string;
+  children: string | ReactNode;
 }
 
-const Link = ({ href, ...props }: Props) => {
+const Link = ({ href, children, ...props }: Props) => {
   return (
     <LinkComponent href={href}>
-      <a {...props} />
+      <a {...props}>{children}</a>
     </LinkComponent>
   );
 };

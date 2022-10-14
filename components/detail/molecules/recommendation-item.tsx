@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import Link from '../atoms/link';
 import Image from '../atoms/image';
 import AnimationPopup from '../../common/animation-popup';
 
@@ -30,13 +30,11 @@ const RecommendationItem = ({ recommendation }: Props) => {
 
   return (
     <RecommendationContainer>
-      <Link href={`/animation/${mediaRecommendation.id}`}>
-        <a>
-          <RecommendationCoverWrapper>
-            <Image imgUrl={mediaRecommendation.coverImage.large} alt="recommendation-cover" />
-          </RecommendationCoverWrapper>
-          <RecommendationTitle>{animationTitle}</RecommendationTitle>
-        </a>
+      <Link href={`/detail/${mediaRecommendation.id}`}>
+        <RecommendationCoverWrapper>
+          <Image imgUrl={mediaRecommendation.coverImage.large} alt="recommendation-cover" />
+        </RecommendationCoverWrapper>
+        <RecommendationTitle>{animationTitle}</RecommendationTitle>
       </Link>
       <AnimationPopup position="160" title={mediaRecommendation.title} score={mediaRecommendation.averageScore} genreList={mediaRecommendation.genres} />
     </RecommendationContainer>
