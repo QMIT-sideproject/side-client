@@ -32,12 +32,23 @@ export interface VariablesType {
   status: string | string[] | undefined;
   genre: string | string[] | undefined;
   licensedBy: string | string[] | undefined;
+  type: string;
 }
 
 export const GET_ANI_LIST = gql`
-  query Page($status: MediaStatus, $isAdult: Boolean, $genre: String, $page: Int, $perPage: Int, $sort: [MediaSort], $search: String, $licensedBy: String) {
+  query Page(
+    $status: MediaStatus
+    $isAdult: Boolean
+    $genre: String
+    $page: Int
+    $perPage: Int
+    $sort: [MediaSort]
+    $search: String
+    $licensedBy: String
+    $type: MediaType
+  ) {
     Page(page: $page, perPage: $perPage) {
-      media(licensedBy: $licensedBy, status: $status, isAdult: $isAdult, genre: $genre, sort: $sort, search: $search) {
+      media(licensedBy: $licensedBy, status: $status, isAdult: $isAdult, genre: $genre, sort: $sort, search: $search, type: $type) {
         title {
           english
           native

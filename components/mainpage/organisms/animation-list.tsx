@@ -1,5 +1,5 @@
 import AniListItem from '../molecules/animation-list-item';
-import { AniType } from '../templates/main-query';
+import { AniType } from '../../../hooks/main-query';
 import { MainPageItemListContainer } from './styles';
 
 interface Props {

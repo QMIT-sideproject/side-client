@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import MainLayout from '../components/mainpage/templates/layout-main';
 import { useGetAnimations } from 'hooks/get-animations';
 import { useEffect, useState, useRef } from 'react';
-import { AniType } from 'components/mainpage/templates/main-query';
+import { AniType } from 'hooks/main-query';
 import { useRouter } from 'next/router';
 import SkeletonAniList from '../components/mainpage/organisms/skeleton-list';
 import Header from 'components/common/header';
