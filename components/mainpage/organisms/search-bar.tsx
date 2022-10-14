@@ -36,7 +36,7 @@ const FiltersContainer = styled.div`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  margin: 30px auto;
+  margin: 150px auto 10px auto;
 `;
 
 export default Filters;
