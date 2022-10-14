@@ -17,6 +17,7 @@ export const useGetAnimations = (page: number) => {
       status: query.airingstatus,
       genre: query.genre,
       licensedBy: query.streamingon,
+      type: 'ANIME',
     },
   });
 
