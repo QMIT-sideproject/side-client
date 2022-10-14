@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import Link from '../atoms/link';
 import Image from '../atoms/image';
 import { AnimationRelationType } from '../templates/detail-query';
 import AnimationPopup from '../../common/animation-popup';
@@ -23,13 +23,11 @@ interface Props {
 const RelationItem = ({ relationType, node }: Props) => {
   return (
     <RelationItemContainer>
-      <Link href={`/animation/${node.id}`}>
-        <a>
-          <ReloationCoverWrapper>
-            <Image imgUrl={node.coverImage.large} alt="relation-cover" />
-          </ReloationCoverWrapper>
-          <RelationType>{relationType}</RelationType>
-        </a>
+      <Link href={`/detail/${node.id}`}>
+        <ReloationCoverWrapper>
+          <Image imgUrl={node.coverImage.large} alt="relation-cover" />
+        </ReloationCoverWrapper>
+        <RelationType>{relationType}</RelationType>
       </Link>
       <AnimationPopup position="160" title={node.title} score={node.averageScore} genreList={node.genres} />
     </RelationItemContainer>
