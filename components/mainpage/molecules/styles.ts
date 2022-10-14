@@ -20,3 +20,10 @@ export const AnimationDetailLink = styled(Link)`
 export const SkeletonListItemContainer = styled.div`
   width: 185px;
 `;
+
+export const AnimationItemBox = styled.div`
+  width: 185px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+`;

@@ -1,7 +1,7 @@
 import AnimationPopup from 'components/common/animation-popup';
 import Img from '../atoms/image';
 import Name from '../atoms/name';
-import { AnimationDetailLink, AnimationListItemContainer } from './styles';
+import { AnimationDetailLink, AnimationListItemContainer, AnimationItemBox } from './styles';
 
 interface Props {
   name: {
@@ -19,8 +19,10 @@ const AnimationListItem = ({ name, img, id, score, genre }: Props) => {
     <AnimationListItemContainer>
       <AnimationDetailLink href={{ pathname: '/detail/[id]', query: { id: id } }}>
         <a>
-          <Img img={img} width={'185px'} height={'265px'} />
-          <Name name={name.english || name.native} />
+          <AnimationItemBox>
+            <Img img={img} width={'185px'} height={'265px'} />
+            <Name name={name.english || name.native} />
+          </AnimationItemBox>
         </a>
       </AnimationDetailLink>
       <AnimationPopup position="200" title={name} score={score} genreList={genre} />

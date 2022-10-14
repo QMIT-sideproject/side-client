@@ -19,14 +19,13 @@ export const FilterDefaultStyle = css`
   width: 160px;
   height: 40px;
   background-color: rgb(251, 251, 251);
-  border: none;
+  border: 1px solid black;
   margin-top: 5px;
-  box-shadow: 0 14px 30px rgba(103, 132, 187, 0.1), 0 4px 4px rgba(103, 132, 187, 0.04);
 `;
 export const SearchInputStyle = css`
   width: 240px;
-  margin-top: 25px;
   padding: 0 20px;
+  margin-top: 25px;
 `;
 
 export const SkeletonCommonStyle = styled.div`
