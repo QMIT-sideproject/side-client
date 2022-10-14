@@ -35,6 +35,8 @@ export interface VariablesType {
   type: string;
 }
 
+export const perPage = 25;
+
 export const GET_ANI_LIST = gql`
   query Page(
     $status: MediaStatus

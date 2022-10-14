@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_ANI_LIST, DataType, VariablesType } from './main-query';
+import { GET_ANI_LIST, DataType, VariablesType, perPage } from './main-query';
 import { useRouter } from 'next/router';
 
 export const useGetAnimations = (page: number) => {
@@ -10,7 +10,7 @@ export const useGetAnimations = (page: number) => {
   const { data, loading, error } = useQuery<DataType, VariablesType>(GET_ANI_LIST, {
     variables: {
       page: page,
-      perPage: 25,
+      perPage: perPage,
       sort: sort,
       search: query.search,
       isAdult: false,
