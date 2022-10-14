@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_ANI_LIST, DataType, VariablesType } from '../components/mainpage/templates/main-query';
+import { GET_ANI_LIST, DataType, VariablesType } from './main-query';
 import { useRouter } from 'next/router';
 
 export const useGetAnimations = (page: number) => {

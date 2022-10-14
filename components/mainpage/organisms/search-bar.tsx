@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Filter from '../molecules/filter';
 import Input from '../atoms/input';
 import { useGetGenre } from '../../../hooks/get-animation-genre';
-import { airingTypes, streamingSites } from '../templates/main-query';
+import { airingTypes, streamingSites } from '../../../hooks/main-query';
 
 const filterNames = ['genre', 'streamingon', 'airingstatus', 'sort'];
 const koreanNames = ['장르', '스트리밍 사이트', '방영 상태', '정렬 상태'];
