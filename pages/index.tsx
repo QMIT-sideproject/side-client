@@ -56,7 +56,7 @@ const MainPage: NextPage = () => {
 
   return (
     <MainpageWrapper>
-      <Header />
+      <Header main />
       {error ? <div>error!!</div> : <MainLayout data={animation} />}
       {loading && <SkeletonAniList />}
       <div ref={lastRef}></div>
