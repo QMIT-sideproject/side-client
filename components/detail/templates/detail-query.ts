@@ -41,6 +41,7 @@ export interface AnimationDetailType {
     month: number;
     day: number;
   };
+  averageScore: number;
   episodes: number;
   stats: {
     scoreDistribution: [
@@ -132,6 +133,7 @@ export const GET_ANIMATION_DETAIL = gql`
         month
         day
       }
+      averageScore
       episodes
       stats {
         scoreDistribution {
