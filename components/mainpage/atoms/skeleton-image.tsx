@@ -6,8 +6,8 @@ const SkeletonImg = () => {
 };
 
 const SkeletonImgStyle = styled(SkeletonCommonStyle)`
-  width: 185px;
-  height: 265px;
+  width: 170px;
+  height: 250px;
   margin: 10px 0 5px 0;
 `;
 

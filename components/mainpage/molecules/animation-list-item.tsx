@@ -20,7 +20,7 @@ const AnimationListItem = ({ name, img, id, score, genre }: Props) => {
       <AnimationDetailLink href={{ pathname: '/detail/[id]', query: { id: id } }}>
         <a>
           <AnimationItemBox>
-            <Img img={img} width={'185px'} height={'265px'} />
+            <Img img={img} width={'170px'} height={'250px'} />
             <Name name={name.english || name.native} />
           </AnimationItemBox>
         </a>

@@ -14,15 +14,15 @@ export const AnimationListItemContainer = styled.div`
 
 export const AnimationDetailLink = styled(Link)`
   cursor: pointer;
-  width: 185px;
+  width: 170px;
 `;
 
 export const SkeletonListItemContainer = styled.div`
-  width: 185px;
+  width: 170px;
 `;
 
 export const AnimationItemBox = styled.div`
-  width: 185px;
+  width: 170px;
   height: 310px;
   display: flex;
   flex-direction: column;
