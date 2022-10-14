@@ -52,7 +52,7 @@ const AnimationGenreContainer = styled.div`
 
 const AnimationGenreValueWrapper = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 15px;
 `;
 
 const GenreLabel = styled(Text)`
@@ -62,6 +62,11 @@ const GenreLabel = styled(Text)`
 
 const GenreLink = styled(Link)`
   color: #777;
+  transition: 0.2s;
+  &:hover {
+    color: #000;
+    transform: scale(1.05);
+  }
 `;
 
 export default AnimationInfo;
