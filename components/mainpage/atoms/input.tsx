@@ -9,17 +9,19 @@ interface Props {
 }
 
 const Input = ({ type = 'text' }: Props) => {
-  const [inputText, setInputText] = useState('');
   const router = useRouter();
+  const [inputText, setInputText] = useState(router.query.search);
 
   const onChangeInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
 
-    if(!e.target.value){
-      router.push(``);
-    }else{
-      router.push(`?search=${e.target.value}`);
+    if (!e.target.value) {
+      router.query.search = [];
+    } else {
+      router.query.search = e.target.value;
     }
+
+    router.push({ pathname: '/', query: { ...router.query } });
   };
 
   return <input type={type} value={inputText} onChange={onChangeInputText} css={[FilterDefaultStyle, SearchInputStyle]} />;
