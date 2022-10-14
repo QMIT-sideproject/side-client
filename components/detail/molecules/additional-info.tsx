@@ -10,7 +10,7 @@ const AdditionalInfo = ({ label, value }: Props) => {
   return (
     <AdditionalInfoContainer>
       <InfoLabel>{label}</InfoLabel>
-      <InfoText>{value.replaceAll('_', ' ')}</InfoText>
+      <InfoText>{value}</InfoText>
     </AdditionalInfoContainer>
   );
 };

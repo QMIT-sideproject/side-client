@@ -20,6 +20,7 @@ const AnimationInfo = ({ data }: Props) => {
       {data.episodes && <AdditionalInfo label="Episodes" value={data.episodes.toString()} />}
       {startDate && <AdditionalInfo label="Start Date" value={startDate} />}
       {endDate && <AdditionalInfo label="End Date" value={endDate} />}
+      <AdditionalInfo label="Average Score" value={`${data.averageScore}%`} />
       <AnimationGenreContainer>
         <GenreLabel>Genres</GenreLabel>
         <AnimationGenreValueWrapper>
