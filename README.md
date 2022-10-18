@@ -2,13 +2,27 @@
 
 애니메이션을 원하는 방식에 따라 검색하고 관련 정보를 얻을 수 있는 서비스
 
-<br>
+[기획 및 Task 관련 노션 링크](https://www.notion.so/qmit1201/2-9-28-10-18-c888bc2bd1084a9bb513e89ae38323b5)
 
 ## 실행 방법
 
 ```
   yarn install
   yarn dev
+```
+
+## 디렉토리 구조
+
+```json
+side-client
+├─ pages // 라우터 및 API 로직 관리
+├─ components
+│ ├─ common // 공용으로 사용되는 컴포넌트 관리
+│ ├─ detail
+│ ├─ mainpage
+├─ hooks // query 관리
+├─ styles // 전역 스타일 관리
+├─ utils // 유틸 함수 관리
 ```
 
 ## 사용 기술
@@ -53,37 +67,46 @@
 ## Convention
 
 ```
-feat : 새로운 기능에 대한 커밋
-fix : 버그 수정에 대한 커밋
+Commit & PR Prefix
+feat : 새로운 기능 개발에 대한 커밋
+bug : 버그 수정에 대한 커밋
+fix : 기능 및 UI 수정에 대한 커밋
+refactor : 코드 리팩토링에 대한 커밋
+config : 개발 환경 설정 및 패키지 설치에 대한 커밋
+test : 테스트 코드 수정에 대한 커밋
 build : 빌드 관련 파일 수정에 대한 커밋
-chore : 그 외 자잘한 수정에 대한 커밋
 docs : 문서 수정에 대한 커밋
 style : 코드 스타일 혹은 포맷 등에 관한 커밋
-refactor :  코드 리팩토링에 대한 커밋
-test : 테스트 코드 수정에 대한 커밋
 
-Commit rule
+Commit Rule
 1. 커밋 prefix는 전체 대문자로 작성
 2. 커밋 제목은 한글로 작성
 ex)FEAT : add post
 
-PR rule
+PR Rule
 1. PR 제목의 prefix는 대괄호로 감싼다
 2. PR 본문은 템플릿을 따른다
 ex)[FEAT] : add post
 
-ETC
-1. 컴포넌트 이름은 PascalCase로 작성한다. -> ProductList
-2. 컴포넌트 파일 명은 kebab-case로 작성한다. -> product-list
-3. 1개요소를 감싸면 ...Wrapper, 2개 이상의 요소를 감싸면 ...Container로 작성한다.
+Merge Rule
+1. 모든 comment가 resolved된 경우 merge 한다.
+2. merge시, 기존 branch는 삭제한다.
 
-Branch rule
+Review Rule
+1. 구두로 이야기된 내용들에 대해서도 comment를 작성한다.
+2. 변경사항에 대해 이해가지 않는 부분에 대해서 comment를 작성한다.
+3. 리뷰 이후 반영된 변경사항에 대한 comment를 작성한다.
+
+ETC Rule
+1. 컴포넌트 파일 명은 kebab-case로 작성한다. -> product-list
+2. 1개요소를 감싸면 ...Wrapper, 2개 이상의 요소를 감싸면 ...Container로 작성한다.
+
+Branch Rule
 main → develop → [prefix]/branch name
 task 별로 branch 생성 후 작업
-
 ```
 
-## PR template
+## PR Template
 
 ```markdown
 ## 개요
@@ -100,4 +123,11 @@ task 별로 branch 생성 후 작업
 <!-- 참고사항 작성 -->
 ```
 
-test
+## 참고 자료
+
+- https://anilist.co
+- https://studio.apollographql.com/sandbox/explorer
+- https://yrnana.dev/post/2022-02-04-enum-union-type
+- https://github.com/remarkablemark/html-react-parser#readme
+- https://github.com/cure53/DOMPurify
+- https://blinders.tistory.com/m/93?category=636275
