@@ -13,7 +13,7 @@
 
 ## 디렉토리 구조
 
-```json
+```
 side-client
 ├─ pages // 라우터 및 API 로직 관리
 ├─ components
